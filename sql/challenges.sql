@@ -58,7 +58,7 @@ ORDER BY c.cohort_date;
 -- 3) Funnel Conversion: View -> Click -> Purchase within 24h per user.
 -- Tables: events(user_id, ts, name IN ('view','click','purchase'))
 -- Output: overall conv rates, and by device.
-
+[uhh, what does this question mean...]
 -- 4) Skew-Aware Join: Join big fact to small dim efficiently (broadcast/semi-join). Provide both naive and optimized versions.
 
 -- 5) COUNT DISTINCT -> HLL: Swap exact distinct of daily active users for HLL sketch merge across days.
