@@ -5,6 +5,16 @@
 -- Tables: events(user_id, event_type, ts)
 -- Hints: MIN() OVER (PARTITION BY), MAX(), COUNT FILTER / SUM CASE in 7d window.
 
+--// assuming that there are not multiple rows per session
+
+SELECT DISTINCT
+  user_id,
+  MIN(ts) OVER (PARTITION BY user_id) AS first_session_at,
+  MAX(ts) OVER (PARTITION BY user_id) AS last_session_at,
+  COUNT(*) FILTER (WHERE ts >= CURRENT_DATE - INTERVAL '7 day')
+    OVER (PARTITION BY user_id) AS sessions_7d
+FROM events;
+
 -- 2) Retention Cohorts: Build D1/D7 retention by signup cohort (signup_date).
 -- Tables: users(user_id, signup_date), events(user_id, ts)
 -- Output: cohort_date, d1_rate, d7_rate.
