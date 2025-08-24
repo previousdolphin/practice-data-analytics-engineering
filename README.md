@@ -1,2 +1,2 @@
 # practice-data-analytics
- practicing data nalaytics fundementals and technical steps
+ practicing data analaytics / analytics engineering fundementals and technical steps
