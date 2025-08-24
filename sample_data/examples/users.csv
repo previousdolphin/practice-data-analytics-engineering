@@ -1,0 +1,4 @@
+user_id,signup_date,geo,device
+u1,2025-08-01,US,ios
+u2,2025-08-02,CA,android
+u3,2025-08-03,US,web

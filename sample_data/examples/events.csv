@@ -1,0 +1,4 @@
+user_id,ts,name,device,endpoint,latency_ms,referrer
+u1,2025-08-23T10:00:00Z,view,ios,/home,120,google
+u1,2025-08-23T10:01:00Z,click,ios,/post,240,reddit
+u2,2025-08-23T12:00:00Z,view,android,/home,80,news

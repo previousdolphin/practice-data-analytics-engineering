@@ -1,0 +1,25 @@
+metrics:
+  - name: violation_rate
+    type: ratio
+    description: Fraction of decisions labeled violation.
+    timestamp: decision_at
+    numerator:
+      expr: "count_if(decision_outcome = 'violation')"
+    denominator:
+      expr: "count(*)"
+    dimensions: [policy_area, content_type, geo, platform]
+
+  - name: prevalence_per_10k
+    type: derived
+    description: Violating impressions per 10k total impressions.
+    expr: "(violating_impressions / nullif(total_impressions,0)) * 10000"
+    depends_on: [violating_impressions, total_impressions]
+
+  - name: cases_per_reviewer_hour
+    type: ratio
+    description: Reviewer throughput per hour.
+    numerator:
+      expr: "count(distinct decision_id)"
+    denominator:
+      expr: "sum(review_seconds)/3600.0"
+    dimensions: [queue, policy_area, region]
