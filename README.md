@@ -13,3 +13,6 @@ Hands-on practice for SQL, Python ETL, Airflow orchestration, data modeling, gov
 - `semantic_layer/` — starter metrics catalog (dbt/Looker/Omni-friendly).
 
 > Start with `sql/challenges.sql` and `python/challenges.py`. Run `airflow/dags/sample_dag.py` in a local Airflow to stitch it together.
+
+# practice-data-analytics
+ practicing data analaytics / analytics engineering fundementals and technical steps
